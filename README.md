@@ -2,6 +2,31 @@
 
 skills-security 是一个本地优先（Local-First）的 Skill 安全评估工具，用于扫描 Skills 目录中的潜在风险模式，适配 Trae、OpenClaw、Claude Code（cc）、Cursor 等生态。
 
+## 一键安装
+
+Windows（PowerShell）：
+
+```powershell
+iwr https://raw.githubusercontent.com/Damond-Fung/skills-security/main/install.ps1 -UseBasicParsing | iex
+```
+
+Linux / macOS：
+
+```bash
+curl -fsSL https://raw.githubusercontent.com/Damond-Fung/skills-security/main/install.sh | bash
+```
+
+默认安装到：
+
+- Windows: `%USERPROFILE%\.trae\skills\skills-security`
+- Linux/macOS: `$HOME/.trae/skills/skills-security`
+
+安装后可直接运行：
+
+```bash
+py -3 %USERPROFILE%\.trae\skills\skills-security\main.py <skills_dir>
+```
+
 ## 拉取后能否直接用
 
 可以。只要仓库根目录包含 `main.py`、`SKILL.md`、`skill.json`，拉取后即可直接运行，无需额外依赖包。
@@ -43,6 +68,8 @@ py -3 main.py d:\path\to\skills d:\path\to\output
 
 ```text
 skills-security/
+├── install.ps1
+├── install.sh
 ├── main.py
 ├── SKILL.md
 ├── skill.json
